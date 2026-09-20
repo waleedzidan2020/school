@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>مدرسة رغامة غرب الابتدائية - معرض الصور</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f4f6f8;color:#222}
+    header{background:#fff;padding:22px 16px;text-align:center;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:5}
+    h1{margin:0;font-size:26px}
+    .count{margin-top:8px;color:#666;font-size:14px}
+    .gallery{max-width:1200px;margin:24px auto;padding:0 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);cursor:pointer}
+    .card img{display:block;width:100%;height:220px;object-fit:cover;transition:transform .2s}
+    .card:hover img{transform:scale(1.02)}
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;align-items:center;justify-content:center;padding:20px}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:96vw;max-height:92vh;object-fit:contain}
+    .close{position:fixed;top:14px;left:18px;background:#fff;color:#111;border:0;border-radius:999px;width:42px;height:42px;font-size:25px;cursor:pointer}
+    footer{text-align:center;color:#777;padding:20px}
+  </style>
+</head>
+<body>
+<header>
+  <h1>مدرسة رغامة غرب الابتدائية</h1>
+  <div class="count">معرض الصور - 13 صورة</div>
+</header>
+
+<main class="gallery">
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.03%20PM.jpeg" alt="صورة 1"></div>
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.04%20PM%20(1).jpeg" alt="صورة 2"></div>
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.04%20PM%20(2).jpeg" alt="صورة 3"></div>
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.04%20PM.jpeg" alt="صورة 4"></div>
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.05%20PM%20(1).jpeg" alt="صورة 5"></div>
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.05%20PM.jpeg" alt="صورة 6"></div>
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.06%20PM%20(1).jpeg" alt="صورة 7"></div>
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.06%20PM%20(2).jpeg" alt="صورة 8"></div>
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.06%20PM%20(3).jpeg" alt="صورة 9"></div>
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.06%20PM%20(4).jpeg" alt="صورة 10"></div>
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.06%20PM.jpeg" alt="صورة 11"></div>
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.07%20PM%20(1).jpeg" alt="صورة 12"></div>
+  <div class="card"><img loading="lazy" src="WhatsApp%20Image%202026-09-20%20at%206.08.07%20PM.jpeg" alt="صورة 13"></div>
+</main>
+
+<div class="lightbox" id="lightbox">
+  <button class="close" id="close" aria-label="إغلاق">×</button>
+  <img id="lightboxImg" alt="عرض الصورة">
+</div>
+
+<footer>اضغط على أي صورة لعرضها بالحجم الكامل</footer>
+
+<script>
+  const box=document.getElementById('lightbox');
+  const big=document.getElementById('lightboxImg');
+  document.querySelectorAll('.card img').forEach(img=>{
+    img.addEventListener('click',()=>{big.src=img.src;box.classList.add('open')});
+  });
+  document.getElementById('close').addEventListener('click',()=>box.classList.remove('open'));
+  box.addEventListener('click',e=>{if(e.target===box)box.classList.remove('open')});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')box.classList.remove('open')});
+</script>
+</body>
+</html>
