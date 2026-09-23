@@ -1,6 +1,289 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>معارض صور المدارس</title></head>
-<body style="font-family:Tahoma,Arial,sans-serif;text-align:center;padding:30px;background:#f3f3f3">
-<h1>معارض صور المدارس</h1>
-<p><a href="schools/مدرسة-السوهاجية-الابتدائية-تعليم-أساسي/">مدرسة السوهاجية الابتدائية تعليم أساسي</a></p>
-</body></html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>معارض صور المدارس</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f4f6f8;color:#1f2937}
+header{background:#294b4b;color:#fff;padding:28px 16px;text-align:center}
+header h1{margin:0 0 8px;font-size:30px}
+header p{margin:0;opacity:.9;font-size:15px}
+.wrap{width:94%;max-width:1000px;margin:22px auto 40px}
+.search-box{background:#fff;padding:14px;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.08);margin-bottom:16px}
+.search-box input{width:100%;padding:13px 15px;border:1px solid #d8dee4;border-radius:10px;font-family:inherit;font-size:16px;outline:none}
+.search-box input:focus{border-color:#294b4b}
+.stats{margin:0 4px 14px;color:#5f6b76;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.school-card{display:flex;align-items:center;gap:12px;background:#fff;text-decoration:none;color:#1f2937;padding:15px;border-radius:13px;box-shadow:0 2px 9px rgba(0,0,0,.07);transition:transform .15s,box-shadow .15s}
+.school-card:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(0,0,0,.12)}
+.num{width:38px;height:38px;flex:0 0 38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#e8f0ef;color:#294b4b;font-weight:bold}
+.info{flex:1;min-width:0}
+.info h2{margin:0 0 5px;font-size:17px;line-height:1.5}
+.info p{margin:0;color:#718096;font-size:13px}
+.arrow{font-size:22px;color:#294b4b;font-weight:bold}
+.empty{display:none;background:#fff;text-align:center;padding:28px;border-radius:12px;color:#6b7280}
+footer{text-align:center;color:#737c85;padding:18px;font-size:13px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}header h1{font-size:25px}.wrap{width:95%}}
+</style>
+</head>
+<body>
+<header>
+  <h1>معارض صور المدارس</h1>
+  <p>اختر اسم المدرسة لفتح معرض الصور الخاص بها</p>
+</header>
+<main class="wrap">
+  <div class="search-box">
+    <input id="search" type="search" placeholder="ابحث باسم المدرسة..." autocomplete="off">
+  </div>
+  <div class="stats">عدد المدارس: <strong id="count">28</strong></div>
+  <section class="grid" id="grid">
+    <a class="school-card" href="schools/%D8%A7%D9%82%D9%84%D9%8A%D8%AA%20%D9%82%D8%A8%D9%84%D9%8A%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A%D8%A9/" data-name="اقليت قبلي الابتدائية">
+    <div class="num">1</div>
+    <div class="info">
+      <h2>اقليت قبلي الابتدائية</h2>
+      <p>13 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D9%84%20%D9%85%D9%83%D9%8A%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%D9%8A%D8%A9/" data-name="السبيل مكي الإعدادية">
+    <div class="num">2</div>
+    <div class="info">
+      <h2>السبيل مكي الإعدادية</h2>
+      <p>19 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B3%D9%8A%D8%AF%D8%A9%20%D8%B2%D9%8A%D9%86%D8%A8%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83%D8%A9/" data-name="السيدة زينب الابتدائية المشتركة">
+    <div class="num">3</div>
+    <div class="info">
+      <h2>السيدة زينب الابتدائية المشتركة</h2>
+      <p>10 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D9%82%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83%D8%A9/" data-name="الشروق الابتدائية المشتركة">
+    <div class="num">4</div>
+    <div class="info">
+      <h2>الشروق الابتدائية المشتركة</h2>
+      <p>19 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%AF%20%D8%B2%D9%8A%D8%AF%20%D8%A3%D8%A8%D9%88%20%D8%AD%D8%A7%D9%85%D8%AF%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%D9%8A%D8%A9/" data-name="الشهيد زيد أبو حامد الإعدادية">
+    <div class="num">5</div>
+    <div class="info">
+      <h2>الشهيد زيد أبو حامد الإعدادية</h2>
+      <p>18 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%AF%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B9%D8%B8%D9%8A%D9%85%20%D8%BA%D8%A7%D9%86%D9%85%20%D8%BA%D9%86%D8%AF%D9%88%D8%B1/" data-name="الشهيد عبدالعظيم غانم غندور">
+    <div class="num">6</div>
+    <div class="info">
+      <h2>الشهيد عبدالعظيم غانم غندور</h2>
+      <p>21 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%AF%20%D8%B9%D9%82%D9%8A%D9%84%20%D8%AD%D8%B3%D9%8A%D9%86%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A%D8%A9/" data-name="الشهيد عقيل حسين الابتدائية">
+    <div class="num">7</div>
+    <div class="info">
+      <h2>الشهيد عقيل حسين الابتدائية</h2>
+      <p>14 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%AF%20%D9%85%D8%AD%D9%85%D8%AF%20%D9%81%D8%AA%D8%AD%D9%8A/" data-name="الشهيد محمد فتحي">
+    <div class="num">8</div>
+    <div class="info">
+      <h2>الشهيد محمد فتحي</h2>
+      <p>1 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%AF%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%20%D8%B3%D9%84%D9%8A%D9%85%D8%A7%D9%86/" data-name="الشهيد محمود سليمان">
+    <div class="num">9</div>
+    <div class="info">
+      <h2>الشهيد محمود سليمان</h2>
+      <p>15 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%AF%20%D9%85%D8%B5%D8%B7%D9%81%D9%8A%20%D8%B9%D8%AF%D9%84%D9%8A%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%20%D8%AA%D9%88%D9%81%D9%8A%D9%82/" data-name="الشهيد مصطفي عدلي محمود توفيق">
+    <div class="num">10</div>
+    <div class="info">
+      <h2>الشهيد مصطفي عدلي محمود توفيق</h2>
+      <p>14 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%AF%20%D9%85%D9%8A%D9%86%D8%A7%20%D8%B9%D8%A7%D8%AF%D9%84%20%D8%A3%D9%86%D9%88%D8%B1%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A%D8%A9%20%D8%A8%D9%85%D9%86%D9%8A%D8%AD%D9%87/" data-name="الشهيد مينا عادل أنور الابتدائية بمنيحه">
+    <div class="num">11</div>
+    <div class="info">
+      <h2>الشهيد مينا عادل أنور الابتدائية بمنيحه</h2>
+      <p>10 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B4%D9%8A%D8%AE%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%B9%D8%A7%D9%84%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83%D8%A9/" data-name="الشيخ عبد العال الابتدائية المشتركة">
+    <div class="num">12</div>
+    <div class="info">
+      <h2>الشيخ عبد العال الابتدائية المشتركة</h2>
+      <p>13 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B9%D8%AF%D9%88%D8%A9%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83%D8%A9/" data-name="العدوة الابتدائية المشتركة">
+    <div class="num">13</div>
+    <div class="info">
+      <h2>العدوة الابتدائية المشتركة</h2>
+      <p>22 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%A7%D9%84%D8%B9%D8%AF%D9%88%D8%A9%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83%D8%A9/" data-name="العدوة الإعدادية المشتركة">
+    <div class="num">14</div>
+    <div class="info">
+      <h2>العدوة الإعدادية المشتركة</h2>
+      <p>13 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%AE%D8%A7%D9%84%D8%AF%20%D8%A8%D9%86%20%D8%A7%D9%84%D9%88%D9%84%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%D9%8A%D8%A9%20%D8%A8%D8%A7%D9%84%D8%B1%D8%BA%D8%A7%D9%85%D8%A9%20%D8%A7%D9%84%D8%A8%D9%84%D8%AF/" data-name="خالد بن الوليد الإعدادية بالرغامة البلد">
+    <div class="num">15</div>
+    <div class="info">
+      <h2>خالد بن الوليد الإعدادية بالرغامة البلد</h2>
+      <p>14 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%B1%D8%BA%D8%A7%D9%85%D8%A9%20%D8%A7%D9%84%D8%A8%D9%84%D8%AF%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A%D8%A9/" data-name="رغامة البلد الابتدائية">
+    <div class="num">16</div>
+    <div class="info">
+      <h2>رغامة البلد الابتدائية</h2>
+      <p>10 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%B1%D8%BA%D8%A7%D9%85%D8%A9%20%D8%A7%D9%84%D8%A8%D9%84%D8%AF%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%D9%8A%D8%A9/" data-name="رغامة البلد الإعدادية">
+    <div class="num">17</div>
+    <div class="info">
+      <h2>رغامة البلد الإعدادية</h2>
+      <p>17 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%B1%D8%BA%D8%A7%D9%85%D8%A9%20%D8%BA%D8%B1%D8%A8%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A%D8%A9/" data-name="رغامة غرب الابتدائية">
+    <div class="num">18</div>
+    <div class="info">
+      <h2>رغامة غرب الابتدائية</h2>
+      <p>13 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%B9%D9%84%D9%8A%20%D8%A8%D9%86%20%D8%A7%D8%A8%D9%8A%20%D8%B7%D8%A7%D9%84%D8%A8%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A/" data-name="علي بن ابي طالب الابتدائي">
+    <div class="num">19</div>
+    <div class="info">
+      <h2>علي بن ابي طالب الابتدائي</h2>
+      <p>8 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%B9%D9%85%D8%A7%D8%AF%20%D8%A7%D9%84%D8%AF%D9%8A%D9%86%20%D8%A7%D8%AD%D9%85%D8%AF/" data-name="عماد الدين احمد">
+    <div class="num">20</div>
+    <div class="info">
+      <h2>عماد الدين احمد</h2>
+      <p>1 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%B9%D9%85%D8%B1%20%D8%A8%D9%86%20%D8%A7%D9%84%D8%AE%D8%B7%D8%A7%D8%A8/" data-name="عمر بن الخطاب">
+    <div class="num">21</div>
+    <div class="info">
+      <h2>عمر بن الخطاب</h2>
+      <p>15 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D8%B9%D9%88%D8%B6%20%D9%85%D9%88%D8%B3%D9%8A%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A%D8%A9/" data-name="عوض موسي الابتدائية">
+    <div class="num">22</div>
+    <div class="info">
+      <h2>عوض موسي الابتدائية</h2>
+      <p>14 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D9%83%D8%B1%D9%85%20%D8%A7%D9%84%D8%AF%D9%8A%D8%A8%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83%D8%A9/" data-name="كرم الديب الابتدائية المشتركة">
+    <div class="num">23</div>
+    <div class="info">
+      <h2>كرم الديب الابتدائية المشتركة</h2>
+      <p>34 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D9%83%D8%B1%D9%85%20%D8%A7%D9%84%D8%AF%D9%8A%D8%A8%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83%D8%A9/" data-name="كرم الديب الإعدادية المشتركة">
+    <div class="num">24</div>
+    <div class="info">
+      <h2>كرم الديب الإعدادية المشتركة</h2>
+      <p>17 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D9%83%D8%B1%D9%85%20%D8%A7%D9%84%D8%AF%D9%8A%D8%A8%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%88%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83%D8%A9/" data-name="كرم الديب الثانوية المشتركة">
+    <div class="num">25</div>
+    <div class="info">
+      <h2>كرم الديب الثانوية المشتركة</h2>
+      <p>26 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D9%85%D8%AD%D9%85%D8%AF%20%D8%AD%D8%B3%D9%8A%D9%86%20%D8%B9%D8%AB%D9%85%D8%A7%D9%86%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%D9%8A%D8%A9%20%D8%A8%D8%A7%D9%82%D9%84%D9%8A%D8%AA/" data-name="محمد حسين عثمان الإعدادية باقليت">
+    <div class="num">26</div>
+    <div class="info">
+      <h2>محمد حسين عثمان الإعدادية باقليت</h2>
+      <p>9 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D9%85%D8%AD%D9%85%D8%AF%20%D8%B9%D8%B1%D8%A7%D8%A8%D9%8A%20%D8%A7%D8%AD%D9%85%D8%AF%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%D9%8A%D8%A9/" data-name="محمد عرابي احمد الإعدادية">
+    <div class="num">27</div>
+    <div class="info">
+      <h2>محمد عرابي احمد الإعدادية</h2>
+      <p>20 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+<a class="school-card" href="schools/%D9%85%D8%AD%D9%85%D8%AF%20%D9%8A%D8%B3%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%A6%D9%8A%D8%A9/" data-name="محمد يسن محمد الابتدائية">
+    <div class="num">28</div>
+    <div class="info">
+      <h2>محمد يسن محمد الابتدائية</h2>
+      <p>21 صورة</p>
+    </div>
+    <div class="arrow">←</div>
+  </a>
+  </section>
+  <div class="empty" id="empty">لا توجد مدرسة مطابقة لبحثك.</div>
+</main>
+<footer>معارض صور المدارس</footer>
+<script>
+const search=document.getElementById('search');
+const cards=[...document.querySelectorAll('.school-card')];
+const count=document.getElementById('count');
+const empty=document.getElementById('empty');
+function normalize(s){return s.trim().replace(/\s+/g,' ').toLowerCase();}
+search.addEventListener('input',()=>{
+  const q=normalize(search.value);
+  let visible=0;
+  cards.forEach(card=>{
+    const ok=!q || normalize(card.dataset.name).includes(q);
+    card.style.display=ok?'flex':'none';
+    if(ok) visible++;
+  });
+  count.textContent=visible;
+  empty.style.display=visible?'none':'block';
+});
+</script>
+</body>
+</html>
